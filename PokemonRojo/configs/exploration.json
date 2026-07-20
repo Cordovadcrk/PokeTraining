@@ -1,0 +1,16 @@
+{
+  "reward_mode": "exploration",
+  "include_start_action": false,
+  "learning_rate": 0.0001,
+  "gamma": 0.99,
+  "epsilon_start": 1.0,
+  "epsilon_min": 0.05,
+  "epsilon_decay": 0.999,
+  "batch_size": 32,
+  "replay_capacity": 20000,
+  "update_target_every": 1000,
+  "episodes": 500,
+  "max_steps": 5000,
+  "screenshot_interval": 200,
+  "checkpoint_every": 50
+}

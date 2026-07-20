@@ -1,0 +1,6 @@
+# Direct runtime dependencies verified together on 2026-07-20.
+matplotlib==3.10.8
+numpy==2.2.6
+Pillow==12.3.0
+pyboy==2.7.0
+tensorflow==2.21.0

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite it using the metadata below."
+title: "PokeTraining"
+type: software
+version: 0.1.0
+date-released: 2026-07-20
+authors:
+  - family-names: Cordova
+    given-names: Ignacio
+    alias: Cordovadcrk
+  - family-names: López
+    given-names: Joaquín
+  - family-names: Silva
+    given-names: Vicente
+repository-code: "https://github.com/Cordovadcrk/PokeTraining"
+license: MIT
+abstract: >-
+  Entrenador de aprendizaje por refuerzo profundo basado en DQN para investigar
+  la interacción de un agente con Pokémon Red mediante TensorFlow y PyBoy.

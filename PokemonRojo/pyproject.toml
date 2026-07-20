@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "poketraining"
+version = "0.1.0"
+description = "Agente DQN para investigar Pokémon Red mediante TensorFlow y PyBoy."
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+  { name = "Ignacio Cordova" },
+  { name = "Joaquín López" },
+  { name = "Vicente Silva" },
+]
+maintainers = [
+  { name = "Ignacio Cordova" },
+]
+keywords = ["deep-q-network", "reinforcement-learning", "pokemon-red", "pyboy"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Education",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "matplotlib==3.10.8",
+  "numpy==2.2.6",
+  "Pillow==12.3.0",
+  "pyboy==2.7.0",
+  "tensorflow==2.21.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "detect-secrets==1.5.0",
+  "pytest==9.1.1",
+  "ruff==0.15.22",
+]
+notebook = [
+  "jupyterlab==4.6.1",
+  "nbformat==5.10.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/Cordovadcrk/PokeTraining"
+Repository = "https://github.com/Cordovadcrk/PokeTraining"
+Issues = "https://github.com/Cordovadcrk/PokeTraining/issues"
+
+[project.scripts]
+poketraining = "poketraining.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+filterwarnings = [
+  "ignore:.*___pyct_anno.*:DeprecationWarning:gast.astn",
+  "ignore:__array__ implementation doesn't accept a copy keyword.*:DeprecationWarning:keras.src.backend.tensorflow.core",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["notebooks/archive"]
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "RUF", "SIM", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["B011"]
